@@ -1,0 +1,12 @@
+{% extends "supermarket/layout2.html" %}
+{% block content %}
+<div class="container">
+    <center><h2>Update Items</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="update_item" class="btn btn-primary" onclick="location.href='confirm'">Save</button><br></br>
+        <button type="delete" name="delete_item" class="btn btn-danger" onclicl="location.href='confirm'">Delete</button>
+    </form></pre>
+</div>
+{% endblock %}

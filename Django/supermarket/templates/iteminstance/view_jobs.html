@@ -1,0 +1,53 @@
+{% extends "supermarket/layout3.html" %}
+{% load bootstrap3 %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<center><h2>View Jobs</h2></center>
+<br>
+    <div class="container-sm">
+        <div style="margin-left: 200px; margin-right: 200px">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="orderable">
+                        <a href="?sort=instanceName">Item</a>
+                    </th>
+                    <th class="orderable">
+                        <a href="?sort=instanceId">Id</a>
+                    </th>
+                    <th class="orderable">
+                        <a href="?sort=status">Status</a>
+                    </th>
+                    <th class="orderable">
+                        <a href="?sort=production_date">Production Date</a>
+                    </th>
+                    <th class="orderable">
+                        <a href="?sort=expiry_date">Expiry Date</a>
+                    </th>
+                    <th class="orderable"
+                        <a href="?sort=quantity">Quantity</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ItemInstance in object_list %}
+                    <td>{{ ItemInstance.instanceName }}</td>
+                    <td><a href="{{ItemInstance.instanceId}}/{{ItemInstance.status}}/update">{{ItemInstance.instanceId}}</href></td>
+                    <td>{{ ItemInstance.status }}<br></td>
+                    <td>{{ ItemInstance.production_date }}<br></td>
+                    <td>{{ ItemInstance.expiry_date }}<br></td>
+                    <td>{{ ItemInstance.quantity }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if filter %}
+    <form>
+        <div style="max-width: 500px; margin-left: 200px">
+            {% bootstrap_form filter.form %}
+            {% bootstrap_button 'filter' %}
+        </div>
+    </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "supermarket/layout2.html" %}
+{% load bootstrap3 %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<center><h2>View Items</h2></center>
+<br>
+    <div class="container-sm">
+        <div style="margin-left: 200px; margin-right: 200px">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="orderable">
+                    <a href="?sort=itemName">Item</a>
+                </th>
+                <th class="orderable">
+                    <a href="?sort=Id">Id</a>
+                </th>
+                <th>
+                    Description
+                </th>
+                <th class="orderable">
+                    <a href="?sort=categoryName">Category</a>
+                </th>
+                <th width="543">
+                    QR Code
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Item in object_list %}
+                <td>{{ Item.itemName }}</td>
+                <td><a href="view_items/{{Item.id}}/update">{{ Item.id }}</href></td>
+                <td>{{ Item.description }}</td>
+                <td>{{ Item.display_category }}</td>
+                <td>
+                {% if Item.qr_code %}
+                    <a href = "/media/QR_CODE/{{Item.itemName}}-{{Item.id}}.png">
+                    <span title="Item.qr_code" class="exists">/media/QR_CODE/{{Item.itemName}}-{{Item.id}}.png</span>
+                    </href>
+                {% endif %}
+                </td></tr>
+            {% endfor %}                
+        </tbody>
+    </table>
+</div>
+    {% if filter %}
+    <form>
+        <div style="max-width: 500px; margin-left: 200px">
+        {% bootstrap_form filter.form %}
+        {% bootstrap_button 'filter' %}
+        </div>
+    </form>
+    {% endif %}
+<br>
+    <div style="max-width: 500px; margin-left: 200px">
+        <div class="body-content">
+    </div>
+</div>
+
+{% endblock %}

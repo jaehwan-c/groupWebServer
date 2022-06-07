@@ -1,0 +1,30 @@
+{% extends "supermarket/layout4.html" %}
+
+{% block content %}
+<center><h2>Data Analytics Result</h2></center>
+
+<div class="container-sm">
+    <div style="margin-left: 200px; margin-right: 200px">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="orderable">
+                    <a href="?sort=instanceName">Item</a>
+                </th>
+                <th class="orderable">
+                    <a href="?sort=availability_rate">Rate by Availability</a>
+                </th>
+                <th class="orderable">
+                    <a href="?sort=status">Rate by Month</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>{{ instanceName }}</td>
+            <td>{{ availability_rate }}<br></td>
+            <td>{{ month_rate }}<br></td>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

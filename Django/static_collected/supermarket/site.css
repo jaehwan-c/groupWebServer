@@ -1,0 +1,95 @@
+.navbar {
+    text-align: center;
+    max-width:800px;
+    max-height: auto;
+    margin: auto;
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    Arial, sans-serif; 
+    color: white;
+    background: linear-gradient(90deg, #99edc3 0%, #77c66e 43%, #03a062 100%);
+    padding: 10px;
+    padding-top: 10px;
+    border-radius: 10px 10px 0 0;
+    justify-content:  space-between;
+}
+ 
+.body-content {
+    margin:auto;
+    text-align: center;
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.navbar-a {
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.navbar-brand { 
+    text-align: center;
+    font-size: 1.2em; 
+    font-weight: 600;
+    color: white;
+}
+
+.table{
+    padding-right: 150px;
+    padding-left: 150px;
+    text-align: center;
+}
+
+.table th{ 
+    text-align: center; 
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #f7f8fa;    
+    text-align: center;
+}
+
+.table td{
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.button-62 {
+    background: linear-gradient(#28ee8b, #37b476);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 10 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+          
+          .button-62:not([disabled]):focus {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(41, 155, 66, 0.5), .125rem .125rem 1rem hsla(120, 70%, 65%, 0.425);
+          }
+          
+          .button-62:not([disabled]):hover {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(41, 155, 66, 0.5), .125rem .125rem 1rem hsla(120, 70%, 65%, 0.425);
+          }
+
+.center { 
+    transform: translate(42%, 0%);
+    position: relative;
+    margin:  auto;
+    text-align: center;
+}
+

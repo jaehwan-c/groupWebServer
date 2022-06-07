@@ -1,0 +1,14 @@
+{% extends "supermarket/layout4.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <center><h2>Filter Data Analytics</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Calculate</button><br></br>
+    </form></pre>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Home Page Basic Layout-->
+<html>
+<head>
+<meta charset="utf-8"/>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'supermarket/site.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+{% if user.is_authenticated %}
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'account_information' %}">Account Information</a></li>
+          <li><a href="{% url 'items_home' %}">Items Home</a></li>
+          <li><a href="{% url 'stock_taking_home' %}">Stock-taking Jobs</a></li>
+          <li><a href="{% url 'stock_home' %}">Instance Home</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </div>
+      </div>
+    </nav>
+    {% block content%}
+    {% endblock %}
+  </body>
+{% else %}
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container-sm">
+  <center>
+    <p>If you want to go to Admin Site : </p>
+    <a href="{% url 'admin:index'%}" button type="button" class="btn btn-default">Admin Site</a>
+    <br></br>
+    <p>If you want to go to Sign Up Page : </p>
+    <a href="{% url 'join' %}" button type="button" class="btn btn-default">Sign Up</a>
+    <br></br>
+    <p>If you want to Login : </p>
+    <a href="{% url 'login' %}" button type="button" class="btn btn-default">Login</a>
+  </center>
+  </div>
+</body>
+{% endif %}
+</html>

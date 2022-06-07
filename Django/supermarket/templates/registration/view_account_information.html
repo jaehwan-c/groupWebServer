@@ -1,0 +1,7 @@
+{% extends "supermarket/layout1.html" %}
+
+{% block content %}
+    {% for users in user %}
+        <center><pre><div style="font-size: 20px">Welcome,<div style="color: blue;">{{ users }}</div></div></pre><center>
+    {% endfor %}
+{% endblock %}

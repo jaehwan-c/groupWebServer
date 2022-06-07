@@ -1,0 +1,11 @@
+{% extends "supermarket/layout1.html" %}
+{% block content %}
+<center>
+    <pre><h2>Change Personal Information</h2>
+    <form method="POST", action="">
+        {% csrf_token %}
+        {{ user_change_form.as_p }}    
+<input class="button-62" type="submit" value="Submit" onclick="location.href='confirm'"/>
+    </form></pre>
+</center>
+{% endblock %}

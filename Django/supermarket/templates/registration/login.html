@@ -1,0 +1,48 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'supermarket/site.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    </div>
+  </div>
+</nav>
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  <center><form method="post" action="{% url 'login' %}">
+    <h2>Login</h2>
+    {% csrf_token %}
+    <center>
+      {{ form.username.label_tag }}
+      {{ form.username }}
+    </center>
+    <center>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+    </center>
+    <br>
+    <input class="button-62" type="submit" value="Login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form></center>
+<center>
+  <div class="container-sm">
+    <p>If you want to sign in as an admin</p>
+    <li><a href="{% url 'admin:index' %}">Admin Site</a></li><br>
+    <p>If you want to sign up</p>
+    <li><a href="{% url 'join' %}">Sign Up</a></li>
+  </div>
+</center>
+{% endblock %}

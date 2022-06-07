@@ -1,0 +1,17 @@
+{% extends "supermarket/layout3.html" %}
+
+{% block content %}
+<div class="container">
+    <center><h2>Add Items</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary" a href="{% url "view_items" %}" >Save</button>
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    </form></pre>
+</div>
+{% endblock %}

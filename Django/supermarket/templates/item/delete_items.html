@@ -1,0 +1,13 @@
+{% extends "supermarket/layout2.html" %}
+{% block content %}
+<div class="container">
+    <center><h2>Delete Items</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        <li>Are you sure to delete this item?</li>
+    </form></pre>
+</div>
+<div class="container">
+    <button type="Delete" class="btn btn-danger" onclick="location.href='confirm'">Delete</button>
+</div>
+{% endblock %}

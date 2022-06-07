@@ -1,0 +1,12 @@
+{% extends "supermarket/layout4.html" %}
+
+{% block content %}
+<div class="container">
+    <center><h2>Create Jobs</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary" a href="{% url "stock_home" %}" >Save</button>
+    </form></pre>
+</div>
+{% endblock %}

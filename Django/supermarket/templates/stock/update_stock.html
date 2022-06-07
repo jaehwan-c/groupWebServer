@@ -1,0 +1,11 @@
+{% extends "supermarket/layout4.html" %}
+
+{% block content %}
+<div class="container">
+    <center><h2>Instance Info</h2></center>
+    <pre><form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form></pre>
+</div>
+{% endblock %}
